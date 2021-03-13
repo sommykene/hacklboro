@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   },
 });
 
+
 const ThumbnailDesign = ({courseTeacher,courseTitle, courseDescription}) => {
   // variables (teacher,subject and description) for the particular lesson
 
@@ -65,6 +66,7 @@ const ThumbnailDesign = ({courseTeacher,courseTitle, courseDescription}) => {
 
 // enabling the thumbnail to be clickable
 const Thumbnail = ({courseTitle, courseDescription, courseTeacher, onPress,}) => {
+
   return (
     <View>
       <TouchableOpacity onPress={onPress} underlayColour="blue">

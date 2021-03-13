@@ -6,6 +6,7 @@ const arrow = require('../images/arrow.png');
 const LessonTitle = ({title, locked}) => {
   return (
     <View style={{height: 55}}>
+      {/*lesson tile if lesson is not locked*/}
       <View style={styles.container}>
         <Text style={{fontWeight: 'bold'}}> {title} </Text>
         {locked != true ? <Image source={arrow} /> : null}
@@ -20,6 +21,7 @@ const LessonTitle = ({title, locked}) => {
 };
 
 const styles = StyleSheet.create({
+  //style for lesson containers
   container: {
     backgroundColor: '#E5E5E5',
     borderRadius: 10,
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-
+  //style for locked lesson, shaded
   overlay: {
     position: 'absolute',
     height: '100%',

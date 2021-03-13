@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import {Image, Picker, StyleSheet, Text, View} from 'react-native';
 
+//create header with name and drop down list
 const UserHeader = () => {
   const [selectedValue, setSelectedValue] = useState('Guest');
   return (
+    //name box on the top left
     <View style={styles.container}>
       <View style={{justifyContent: 'flex-start'}}>
         <Text> Sally </Text>
       </View>
-
+      {/* drop down list with three options*/}
       <View style={styles.drop_down}>
         <Picker
           selectedValue={selectedValue}
