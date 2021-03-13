@@ -18,9 +18,12 @@ const ViewChooser = ({route, navigation}) => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
+      <Text style={{fontSize: 30, fontWeight: 'bold'}}>
+        Select Area To View
+      </Text>
       <View style={styles.container}>
         <TouchableOpacity onPress={() => Alert.alert('GENERAL Button pressed')}>
-          <BlueButtonText text="GENERAL" />
+          <BlueButtonText text="GENERAL TOPICS" />
         </TouchableOpacity>
       </View>
 
