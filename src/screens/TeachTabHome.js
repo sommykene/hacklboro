@@ -1,11 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import AddCourse from './AddCourse';
-import {Button, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Button,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Thumbnail from '../components/courseThumbnail';
 import Spacer from '../utils/Spacer';
 
+import courseData from '../utils/courseData.json';
+
 const TeachTabHome = ({navigation}) => {
+  const [search, setSearch] = useState('');
+
+  var arr = [];
+
+  Object.keys(courseData).forEach((key) => {
+    arr.push(courseData[key]);
+  });
+
+  const [courseList, updateCourseList] = useState(arr);
+
+  var results = courseList.map((item, i) =>
+    item.type === 'Student' ? (
+      <>
+        <Thumbnail
+          key={item.courseTitle}
+          courseTitle={item.courseTitle}
+          courseDescription={item.courseDescription}
+          courseTeacher={item.courseTeacher}
+          onPress={() => navigation.navigate('ViewCourse')}
+        />
+        <Spacer />
+      </>
+    ) : null,
+  );
+
   return (
     <View style={{flex: 1, margin: 20}}>
       <Text
@@ -28,15 +62,7 @@ const TeachTabHome = ({navigation}) => {
           </Text>
         </TouchableOpacity>
       </View>
-      <Spacer />
-      <Thumbnail />
-      <Spacer />
-      <Thumbnail />
-      <Spacer />
-      <Thumbnail />
-      <Spacer />
-      <Thumbnail />
-      <Spacer />
+      <ScrollView>{results}</ScrollView>
       {/* <View style={styles.buttons}>
         <TouchableOpacity onPress={() => navigation.navigate('Edit Course')}>
           <Text>Edit Your Course</Text>
