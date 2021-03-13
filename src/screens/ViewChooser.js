@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, View, Text, Button, Alert } from 'react-native'
-import { color } from 'react-native-reanimated'
 
 const ViewChooser = () => {
     return(
