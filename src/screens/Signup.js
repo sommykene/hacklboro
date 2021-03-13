@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
 });
 
 const Signup = ({navigation}) => {
-  // getters and setters for registering an account using your name, username and password
   const [userName, setUserName] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [prefName, setPrefName] = useState('');
@@ -45,7 +44,6 @@ const Signup = ({navigation}) => {
 
   if (regSuccess) {
     return (
-      // confirmation of registration
       <View>
         <Text>Registration Successful</Text>
         <TouchableOpacity onPress={() => props.navigation.navigate('login')}>
@@ -65,7 +63,7 @@ const Signup = ({navigation}) => {
           <Spacer />
           <Spacer />
 
-          {/* entering registration details  */}
+          {/* enter details  */}
           <View>
             <TextInput
               style={styles.inputStyle}

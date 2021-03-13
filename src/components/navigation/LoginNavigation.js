@@ -14,7 +14,6 @@ const Stack = createNativeStackNavigator();
 
 function Nav() {
   return (
-      // stack navigators for moving from one screen to another within the app
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen
         name="Login"
@@ -42,6 +41,11 @@ function Nav() {
         component={TabNavigatorStudent}
         options={{headerShown: false}}
       />
+      {/* <Stack.Screen
+        name="TeacherNav"
+        component={TabNavigatorTeacher}
+        options={{headerShown: false}}
+      /> */}
     </Stack.Navigator>
   );
 }

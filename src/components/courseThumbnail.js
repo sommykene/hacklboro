@@ -33,14 +33,10 @@ const styles = StyleSheet.create({
 });
 
 const ThumbnailDesign = () => {
-  // variables (teacher,subject and description) for the particular lesson
   const teacher = 'M. Jones';
   const subject = 'Maths';
   const desc = 'This is a maths course';
-
-
   return (
-      // thumbnail contents (image, subject, teacher and description)
     <View style={styles.container}>
       <Image
         style={styles.img}
@@ -67,7 +63,6 @@ const ThumbnailDesign = () => {
   );
 };
 
-// enabling the thumbnail to be clickable
 const Thumbnail = ({title, onPress}) => {
   return (
     <View>
