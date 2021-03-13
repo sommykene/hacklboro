@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
+//blue text box, needs text input
 const BlueButtonText = ({text}) => {
   return (
     <View style={styles.container}>
