@@ -32,12 +32,12 @@ function BrowseScreen() {
       </View>
     );
   }
-
+//comment
 const Tab = createMaterialBottomTabNavigator();
 
 export default function TabNavigationStudent() {
   return (
-    <NavigationContainer>
+    <NavigationContainer shifting={false}>
       <Tab.Navigator
         initialRouteName="Home"
         activeColor="#f0edf6"
