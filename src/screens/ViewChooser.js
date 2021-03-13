@@ -7,7 +7,7 @@ const ViewChooser = () => {
 
             <View style={styles.container}>
             <Button
-                title="Guest"
+                title="General"
                 color='#C4C4C4'
                 onPress={() => Alert.alert('Guest Button pressed')}
               />
