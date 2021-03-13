@@ -62,6 +62,7 @@ const TeachTabHome = ({navigation}) => {
           </Text>
         </TouchableOpacity>
       </View>
+      <Spacer />
       <ScrollView>{results}</ScrollView>
       {/* <View style={styles.buttons}>
         <TouchableOpacity onPress={() => navigation.navigate('Edit Course')}>
