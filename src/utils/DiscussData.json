@@ -1,6 +1,7 @@
 {
   "one": {
-    "LessonTitle": "",
-    "locked": ""
+    "question": "",
+    "answer": "",
+    "noRes": ""
   }
 }
