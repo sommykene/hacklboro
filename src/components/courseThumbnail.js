@@ -6,9 +6,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 15,
     borderRadius: 8,
-    backgroundColor: 'grey',
-    width: 250,
-    height:90,
+    backgroundColor: 'white',
+    height: 90,
+    elevation: 2,
   },
   t: {
     fontWeight: 'bold',
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   s: {
     fontWeight: 'bold',
-    fontSize:18,
+    fontSize: 18,
     paddingLeft: 3,
   },
   d: {
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
   img: {
     width: 50,
     height: 50,
-    paddingRight:4,
-  }
+    paddingRight: 20,
+  },
 });
 
 const ThumbnailDesign = () => {
@@ -38,14 +38,21 @@ const ThumbnailDesign = () => {
   const desc = 'This is a maths course';
   return (
     <View style={styles.container}>
-      <Image style={styles.img}
-        source={{uri:'https://cdn8.openculture.com/wp-content/uploads/2014/06/free-textbooks1.jpg'}}
+      <Image
+        style={styles.img}
+        source={{
+          uri:
+            'https://cdn8.openculture.com/wp-content/uploads/2014/06/free-textbooks1.jpg',
+        }}
       />
-      <View>
+      <View style={{flex: 1, paddingLeft: 10}}>
         <Text>
           <Text>
             <Text style={styles.s}>{subject}</Text>
-            <Text style={styles.d}>{'\n'}{desc}</Text>
+            <Text style={styles.d}>
+              {'\n'}
+              {desc}
+            </Text>
           </Text>
         </Text>
         <Text>
@@ -56,19 +63,14 @@ const ThumbnailDesign = () => {
   );
 };
 
-export default class Thumbnail extends Component {
-  _onPressButton() {
-    alert('Thumbnail pressed');
-  }
-  render() {
-    return (
-      <View>
-        <TouchableOpacity
-          onPress={this._onPressButton}
-          underlayColour="blue">
-          <ThumbnailDesign />
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
+const Thumbnail = ({title, onPress}) => {
+  return (
+    <View>
+      <TouchableOpacity onPress={onPress} underlayColour="blue">
+        <ThumbnailDesign />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default Thumbnail;

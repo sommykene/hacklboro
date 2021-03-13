@@ -6,27 +6,21 @@
  * @flow strict-local
  */
 
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+
 import LoginNav from './src/components/navigation/LoginNavigation';
-import LoginScreen from './src/screens/Login';
+import TabNavigationTeacher from './src/components/navigation/TabNavigatorTeacher';
+import TopTabNavLessons from './src/components/navigation/TopTabNavLesson';
+import VideoPlayer from './src/components/VideoPlayer';
 
 function App() {
   return (
-
-    <>
-      <StatusBar barStyle="dark-content" />
-
-        <LoginNav />
-
-    </>
+    <NavigationContainer>
+      <LoginNav />
+      {/* <VideoPlayer videoID={'p33BYf1NDAE'} />
+      <TopTabNavLessons /> */}
+    </NavigationContainer>
   );
 }
 

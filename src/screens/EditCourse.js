@@ -17,7 +17,7 @@ const LESSON_STATE = {
   lessonDescription: '',
 };
 
-const AddCourse = () => {
+const EditCourse = () => {
   // store variables
   const [courseTitle, setCourseTitle] = useState('');
   const [courseOverview, setCourseOverview] = useState('');
@@ -29,7 +29,6 @@ const AddCourse = () => {
   };
 
   // useEffect(() => {
-  //   console.log(lessonData);
   // }, [lessonData]);
   //   form for submitting teaching course
   return (
@@ -97,4 +96,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddCourse;
+export default EditCourse;

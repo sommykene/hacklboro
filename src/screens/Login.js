@@ -10,6 +10,8 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
 } from 'react-native';
+import BlueButtonText from '../components/BlueButtonText';
+import Spacer from '../utils/Spacer';
 import ViewChooser from './ViewChooser';
 
 const styles = StyleSheet.create({
@@ -23,10 +25,6 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     paddingBottom: 10,
   },
-  main: {
-    flex: 1,
-    padding: 20,
-  },
   LoginStyle: {
     borderRadius: 8,
     backgroundColor: 'grey',
@@ -38,11 +36,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 25,
     padding: 20,
+    textAlign: 'center',
   },
   textStyle1: {
     textDecorationLine: 'underline',
     fontSize: 15,
     padding: 20,
+    textAlign: 'center',
   },
 });
 
@@ -59,14 +59,23 @@ const LoginScreen = ({navigation}) => {
   const passwordInputRef = createRef();
 
   return (
-    <View style={styles.main}>
+    <View style={{flex: 1, padding: 30}}>
       <ScrollView keyboardShouldPersistTaps="handled">
-        <View style={styles.main}>
+        <View>
           <KeyboardAvoidingView enabled>
+            <Text
+              style={{fontSize: 40, fontWeight: 'bold', textAlign: 'center'}}>
+              Login
+            </Text>
+            <Spacer />
+            <Spacer />
+            {/* gets rid of keyboard */}
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
               <Text> </Text>
             </TouchableWithoutFeedback>
-            <View style={styles.main}>
+
+            {/* input login details */}
+            <View>
               <TextInput
                 style={styles.inputStyle}
                 onChangeText={(user) => setUserName(user)}
@@ -79,8 +88,7 @@ const LoginScreen = ({navigation}) => {
                 }
                 blurOnSubmit={false}
               />
-            </View>
-            <View style={styles.main}>
+              <Spacer />
               <TextInput
                 style={styles.inputStyle}
                 onChangeText={(pass) => setUserPassword(pass)}
@@ -92,11 +100,16 @@ const LoginScreen = ({navigation}) => {
                 secureTextEntry={true}
               />
             </View>
+            <Spacer />
+            <Spacer />
 
-            <TouchableOpacity onPress={() => navigate('ViewChooser')}>
-              <Text style={styles.LoginStyle}>LOGIN</Text>
+            {/* login btn */}
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ViewChooser')}>
+              <BlueButtonText text="LOGIN" />
             </TouchableOpacity>
 
+            {/* click to signup page */}
             <TouchableWithoutFeedback
               onPress={() => navigation.navigate('Signup')}>
               <View>
@@ -105,8 +118,12 @@ const LoginScreen = ({navigation}) => {
                 </Text>
               </View>
             </TouchableWithoutFeedback>
+
+            {/* continue as guest */}
             <TouchableWithoutFeedback
-              onPress={() => navigation.navigate('ViewChooser')}>
+              onPress={() =>
+                navigation.navigate('ViewChooser', {showAll: false})
+              }>
               <Text style={styles.textStyle1}>Continue as Guest</Text>
             </TouchableWithoutFeedback>
           </KeyboardAvoidingView>

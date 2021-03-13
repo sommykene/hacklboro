@@ -5,17 +5,18 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Image,
 } from 'react-native';
+import Spacer from '../../utils/Spacer';
 import BlueButtonText from '../BlueButtonText';
-
-const Spacer = () => {
-  return <View style={{padding: 5}} />;
-};
 
 const AddLesson = ({ind, lessonData, setLessonData}) => {
   // store variables
   const [lessonTitle, setLessonTitle] = useState('');
   const [lessonDescription, setLessonDescription] = useState('');
+  const [liveDate, setLiveDate] = useState('');
+  const [liveTime, setLiveTime] = useState('');
+  const [isLive, setIsLive] = useState(false);
 
   const handleAdd = () => {
     const thisLesson = {
@@ -25,7 +26,6 @@ const AddLesson = ({ind, lessonData, setLessonData}) => {
 
     let updateData = [...lessonData];
     updateData[ind] = thisLesson;
-    console.log(updateData[ind]);
     setLessonData(updateData);
   };
 
@@ -37,7 +37,7 @@ const AddLesson = ({ind, lessonData, setLessonData}) => {
         style={styles.input}
         onChangeText={setLessonTitle}
         value={lessonTitle}
-        placeholder="Course Title"
+        placeholder="Lesson Title"
       />
       <Spacer />
       <TextInput
@@ -48,15 +48,75 @@ const AddLesson = ({ind, lessonData, setLessonData}) => {
         multiline={true}
       />
 
-      <TouchableOpacity
-        onPress={() => handleAdd()}
+      {isLive === true ? (
+        <>
+          <Spacer />
+          <View style={{flexDirection: 'row'}}>
+            <TextInput
+              style={{...styles.input, width: '40%'}}
+              onChangeText={setLiveDate}
+              value={liveDate}
+              placeholder="Live Date"
+            />
+            <Spacer />
+            <TextInput
+              style={{...styles.input, width: '40%'}}
+              onChangeText={setLiveTime}
+              value={liveTime}
+              placeholder="Live Time"
+            />
+          </View>
+        </>
+      ) : null}
+
+      <View
         style={{
-          alignItems: 'flex-end',
           flex: 1,
-          padding: 5,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          paddingLeft: 0,
+          width: '100%',
         }}>
-        <BlueButtonText text={'add'} />
-      </TouchableOpacity>
+        {/* make lesson live lesson */}
+        <TouchableOpacity
+          onPress={() => setIsLive(!isLive)}
+          style={{
+            padding: 5,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
+          <Image
+            style={{height: 30, width: 30, resizeMode: 'contain'}}
+            source={
+              isLive === false
+                ? require('../../images/unchecked.png')
+                : require('../../images/checked.png')
+            }
+          />
+          <Spacer />
+          <Text>Make Live</Text>
+        </TouchableOpacity>
+        <Spacer />
+
+        {/* upload video */}
+        {isLive === false ? (
+          <TouchableOpacity
+          // onPress={() => handleAdd()}
+          >
+            <BlueButtonText text={'Upload Video'} />
+          </TouchableOpacity>
+        ) : null}
+
+        {/*  finalise lesson */}
+        <TouchableOpacity
+          onPress={() => handleAdd()}
+          style={{
+            padding: 5,
+          }}>
+          <BlueButtonText text={'Finish'} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

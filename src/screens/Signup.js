@@ -9,17 +9,19 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
+import BlueButtonText from '../components/BlueButtonText';
+import Spacer from '../utils/Spacer';
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
   inputStyle: {
     flex: 1,
-        color: 'white',
-        paddingRight: 10,
-        paddingLeft: 10,
-        borderWidth: 2,
-        borderRadius: 5,
-        borderColor: 'grey',
-        paddingBottom: 10,
+    color: 'white',
+    paddingRight: 10,
+    paddingLeft: 10,
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: 'grey',
+    paddingBottom: 10,
   },
   RegisterStyle: {
     borderRadius: 8,
@@ -52,9 +54,16 @@ const Signup = ({navigation}) => {
   }
 
   return (
-    <View>
+    <View style={{flex: 1, padding: 30}}>
       <ScrollView keyboardShouldPersistTaps="handled">
         <KeyboardAvoidingView enabled>
+          <Text style={{fontSize: 40, fontWeight: 'bold', textAlign: 'center'}}>
+            Sign Up
+          </Text>
+          <Spacer />
+          <Spacer />
+
+          {/* enter details  */}
           <View>
             <TextInput
               style={styles.inputStyle}
@@ -67,6 +76,7 @@ const Signup = ({navigation}) => {
               blurOnSubmit={false}
             />
           </View>
+          <Spacer />
           <View>
             <TextInput
               style={styles.inputStyle}
@@ -77,6 +87,8 @@ const Signup = ({navigation}) => {
               blurOnSubmit={false}
             />
           </View>
+          <Spacer />
+
           <View>
             <TextInput
               style={styles.inputStyle}
@@ -89,9 +101,12 @@ const Signup = ({navigation}) => {
               blurOnSubmit={false}
             />
           </View>
-          <TouchableOpacity
-          onPress={() => navigation.navigate ('Login')}>
-            <Text style={styles.RegisterStyle}>REGISTER</Text>
+          <Spacer />
+          <Spacer />
+
+          {/* register btn */}
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+            <BlueButtonText text="REGISTER" />
           </TouchableOpacity>
         </KeyboardAvoidingView>
       </ScrollView>

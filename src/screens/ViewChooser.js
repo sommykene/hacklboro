@@ -1,50 +1,52 @@
-import React from 'react'
-import { StyleSheet, View, Text, Button, Alert } from 'react-native'
+import React from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Button,
+  Alert,
+  TouchableOpacity,
+} from 'react-native';
+import BlueButtonText from '../components/BlueButtonText';
+const ViewChooser = ({route, navigation}) => {
+  const {showAll} = route.params;
 
-const ViewChooser = () => {
-    return(
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 250}}>
+  return (
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => Alert.alert('GENERAL Button pressed')}>
+          <BlueButtonText text="GENERAL" />
+        </TouchableOpacity>
+      </View>
 
-            <View style={styles.container}>
-            <Button
-                title="General"
-                color='#C4C4C4'
-                onPress={() => Alert.alert('Guest Button pressed')}
-              />
-            </View>
-
-            <View style={styles.container}>
-            <Button
-                title="Student"
-                color='#C4C4C4'
-                onPress={() => Alert.alert('Student Button pressed')}
-              />
-            </View>
-
-            <View style={styles.container}>
-            <Button
-               title="Teacher"
-               color='#C4C4C4'
-               onPress={() => Alert.alert('Teacher Button pressed')}
-             />
-            </View>
-
-        </View>
-    )
-}
-
+      {showAll === true ? (
+        <>
+          <View style={styles.container}>
+            <TouchableOpacity onPress={() => navigation.navigate('StudentNav')}>
+              <BlueButtonText text="STUDENT" />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.container}>
+            <TouchableOpacity onPress={() => navigation.navigate('TeacherNav')}>
+              <BlueButtonText text="TEACHER" />
+            </TouchableOpacity>
+          </View>
+        </>
+      ) : null}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-
-    container: {
-    borderRadius:20,
-    padding:20,
-    width:'70%',
-    height: '40%',
-    alignContent: 'center',
-    fontSize: 40,
-    fontWeight: 'bold',
- },
-})
+  container: {
+    padding: 20,
+    width: '70%',
+  },
+});
 
 export default ViewChooser;

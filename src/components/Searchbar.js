@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, StyleSheet, View, FlatList } from 'react-native';
-import { SearchBar } from 'react-native-elements';
-import { Searchbar } from 'react-native-paper';
+import React, {useState, useEffect} from 'react';
+import {SafeAreaView, Text, StyleSheet, View, FlatList} from 'react-native';
+import {SearchBar} from 'react-native-elements';
+import {Searchbar} from 'react-native-paper';
 
-const Searchbar = () => {
+const TopSearchBar = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
-
 
   const searchFilterFunction = (text) => {
     // Check if searched text is not blank
@@ -32,7 +31,7 @@ const Searchbar = () => {
     }
   };
 
-  const ItemView = ({ item }) => {
+  const ItemView = ({item}) => {
     return (
       // Flat List Item
       <Text style={styles.itemStyle} onPress={() => getItem(item)}>
@@ -62,11 +61,12 @@ const Searchbar = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{flex: 1}}>
       <View style={styles.container}>
-        <SearchBar
+        <Searchbar
+          // style={{backgroundColor: 'red'}}
           round
-          searchIcon={{ size: 24 }}
+          // searchIcon={{size: 24}}
           onChangeText={(text) => searchFilterFunction(text)}
           onClear={(text) => searchFilterFunction('')}
           placeholder="Search Courses..."
@@ -85,11 +85,12 @@ const Searchbar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: 'aqua',
   },
   itemStyle: {
     padding: 10,
+    backgroundColor: 'orange',
   },
 });
 
-export default Searchbar;
+export default TopSearchBar;
