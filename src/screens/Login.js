@@ -24,9 +24,32 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   main: {
-    flex:1,
+    flex: 1,
+    padding: 20,
+  },
+  LoginStyle: {
+    borderRadius: 8,
+    backgroundColor: 'grey',
+    padding: 20,
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  textStyle: {
+    fontWeight: 'bold',
+    fontSize: 25,
+    padding: 20,
+  },
+  textStyle1: {
+    textDecorationLine: 'underline',
+    fontSize: 15,
+    padding: 20,
   },
 });
+
+export const LoggedIn = {
+  yes: true,
+  no: false,
+};
 
 const LoginScreen = ({navigation}) => {
   const [userName, setUserName] = useState('');
@@ -41,7 +64,7 @@ const LoginScreen = ({navigation}) => {
         <View style={styles.main}>
           <KeyboardAvoidingView enabled>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-              <Text>Login!</Text>
+              <Text> </Text>
             </TouchableWithoutFeedback>
             <View style={styles.main}>
               <TextInput
@@ -70,18 +93,21 @@ const LoginScreen = ({navigation}) => {
               />
             </View>
 
-            <TouchableOpacity
-              onPress={() => navigation.navigate('ViewChooser')}>
-              <Text>LOGIN</Text>
+            <TouchableOpacity onPress={() => navigate('ViewChooser')}>
+              <Text style={styles.LoginStyle}>LOGIN</Text>
             </TouchableOpacity>
 
             <TouchableWithoutFeedback
               onPress={() => navigation.navigate('Signup')}>
-              <Text>Click here to register a new account!</Text>
+              <View>
+                <Text style={styles.textStyle}>
+                  Click here to register a new account!
+                </Text>
+              </View>
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback
               onPress={() => navigation.navigate('ViewChooser')}>
-              <Text>Continue as Guest</Text>
+              <Text style={styles.textStyle1}>Continue as Guest</Text>
             </TouchableWithoutFeedback>
           </KeyboardAvoidingView>
         </View>
