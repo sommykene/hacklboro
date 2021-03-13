@@ -3,6 +3,7 @@
     "courseTitle": "",
     "courseDescription": "",
     "courseTeacher": "",
-    "imageurl": ""
+    "imageurl": "",
+    "type": ""
   }
 }
