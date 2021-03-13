@@ -15,6 +15,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import TabNavigation from './src/components/navigation/TabNavigatorTeacher';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <Text>Hack Lboro</Text>
+          <TabNavigation/>
         </ScrollView>
       </SafeAreaView>
     </>
