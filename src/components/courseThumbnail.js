@@ -32,15 +32,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const ThumbnailDesign = () => {
+const ThumbnailDesign = ({courseTeacher,courseTitle, courseDescription}) => {
   // variables (teacher,subject and description) for the particular lesson
-  const teacher = 'M. Jones';
-  const subject = 'Maths';
-  const desc = 'This is a maths course';
-
 
   return (
-      // thumbnail contents (image, subject, teacher and description)
+    // thumbnail contents (image, subject, teacher and description)
     <View style={styles.container}>
       <Image
         style={styles.img}
@@ -52,15 +48,15 @@ const ThumbnailDesign = () => {
       <View style={{flex: 1, paddingLeft: 10}}>
         <Text>
           <Text>
-            <Text style={styles.s}>{subject}</Text>
+            <Text style={styles.s}>{courseTitle}</Text>
             <Text style={styles.d}>
               {'\n'}
-              {desc}
+              {courseDescription}
             </Text>
           </Text>
         </Text>
         <Text>
-          <Text style={styles.t}>{teacher}</Text>
+          <Text style={styles.t}>{courseTeacher}</Text>
         </Text>
       </View>
     </View>
@@ -68,11 +64,15 @@ const ThumbnailDesign = () => {
 };
 
 // enabling the thumbnail to be clickable
-const Thumbnail = ({title, onPress}) => {
+const Thumbnail = ({courseTitle, courseDescription, courseTeacher, onPress,}) => {
   return (
     <View>
       <TouchableOpacity onPress={onPress} underlayColour="blue">
-        <ThumbnailDesign />
+        <ThumbnailDesign
+          courseTitle={courseTitle}
+          courseDescription={courseDescription}
+          courseTeacher={courseTeacher}
+        />
       </TouchableOpacity>
     </View>
   );
