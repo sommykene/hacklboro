@@ -17,9 +17,8 @@ import VideoPlayer from './src/components/VideoPlayer';
 function App() {
   return (
     <NavigationContainer>
+        {/*loading the main login navigation*/}
       <LoginNav />
-      {/* <VideoPlayer videoID={'p33BYf1NDAE'} />
-      <TopTabNavLessons /> */}
     </NavigationContainer>
   );
 }
