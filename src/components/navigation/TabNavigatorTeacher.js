@@ -15,6 +15,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import MyCourseStack from './MyCourseStack';
+import SearchPage from '../../screens/SearchPage';
+import MyProfile from '../../screens/ProfileScreen';
 
 function TrainingScreen() {
   return (
@@ -61,10 +63,14 @@ export default function TabNavigationTeacher() {
         component={VideoPlayer}
         initialParams={{videoId: 'p33BYf1NDAE'}}
       /> */}
-      <Tab.Screen name="My Courses" component={MyCourseStack} />
-      <Tab.Screen name="Training" component={TrainingScreen} />
+      <Tab.Screen
+        name="My Courses"
+        component={MyCourseStack}
+        initialParams={{type: 'Teacher'}}
+      />
+      <Tab.Screen name="Training" component={SearchPage} />
       <Tab.Screen name="Teach" component={TeachCourseStack} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Profile" component={MyProfile} />
     </Tab.Navigator>
   );
 }

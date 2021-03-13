@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import MyCourseStack from './MyCourseStack';
 import SearchPage from '../../screens/SearchPage';
+import MyProfile from '../../screens/ProfileScreen';
 
 function BrowseScreen() {
   return (
@@ -51,9 +52,13 @@ export default function TabNavigationStudent() {
           return <FontAwesomeIcon icon={iconName} color={color} />;
         },
       })}>
-      <Tab.Screen name="My Courses" component={MyCourseStack} />
+      <Tab.Screen
+        name="My Courses"
+        component={MyCourseStack}
+        initialParams={{type: 'Student'}}
+      />
       <Tab.Screen name="Browse Course" component={SearchPage} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Profile" component={MyProfile} />
     </Tab.Navigator>
   );
 }

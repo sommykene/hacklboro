@@ -15,8 +15,34 @@ import Spacer from '../utils/Spacer';
 import UserHeader from '../components/Header';
 import TopSearchBar from '../components/Searchbar';
 
+import courseData from '../utils/courseData.json';
+
 const SearchPage = ({navigation}) => {
   const [search, setSearch] = useState('');
+
+  var arr = [];
+
+  Object.keys(courseData).forEach((key) => {
+    arr.push(courseData[key]);
+  });
+
+  const [courseList, updateCourseList] = useState(arr);
+
+  var results = courseList.map((item, i) =>
+    item.type === 'Student' ? (
+      <>
+        <Thumbnail
+          key={item.courseTitle}
+          courseTitle={item.courseTitle}
+          courseDescription={item.courseDescription}
+          courseTeacher={item.courseTeacher}
+          onPress={() => navigation.navigate('ViewCourse')}
+        />
+        <Spacer />
+      </>
+    ) : null,
+  );
+
   return (
     <>
       <UserHeader />
@@ -65,17 +91,7 @@ const SearchPage = ({navigation}) => {
             <Thumbnail />
           </>
         ) : (
-          <>
-            <Thumbnail />
-            <Spacer />
-            <Thumbnail />
-            <Spacer />
-            <Thumbnail />
-            <Spacer />
-            <Thumbnail />
-            <Spacer />
-            <Thumbnail />
-          </>
+          <>{results}</>
         )}
       </View>
     </>

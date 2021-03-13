@@ -3,6 +3,7 @@ import {View, Image, StyleSheet, Text, Dimensions} from 'react-native';
 import badge from '../images/png/chevron-1.png';
 
 import TagInput from 'react-native-tags-input';
+import Spacer from '../utils/Spacer';
 
 const mainColor = '#fff';
 

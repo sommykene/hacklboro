@@ -8,7 +8,7 @@ import TopTabNavLessons from './TopTabNavLesson';
 
 const Stack = createStackNavigator();
 
-const MyCourseStack = () => {
+const MyCourseStack = ({navigation}) => {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
@@ -16,7 +16,11 @@ const MyCourseStack = () => {
         options={{headerShown: false}}
         component={MyCourses}
       />
-      <Stack.Screen name="ViewCourse" component={ViewCourse} />
+      <Stack.Screen
+        name="ViewCourse"
+        component={ViewCourse}
+        options={{title: 'Course'}}
+      />
     </Stack.Navigator>
   );
 };

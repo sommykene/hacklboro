@@ -15,7 +15,7 @@
   },
   "three": {
     "courseTitle": "Teach English for French Speaking Countries",
-    "courseDescription": "For English teachers to learn the fundamentals of the French language in order to teach in French countries",
+    "courseDescription": "For English teachers to learn the",
     "courseTeacher": "Martin Luther",
     "imageurl": "",
     "type": "Teacher"
@@ -29,7 +29,7 @@
   },
   "five": {
     "courseTitle": "English for Non English Speakers",
-    "courseDescription": "Learn English using lesson tailored for those who do not speak it natively",
+    "courseDescription": "Learn English using lesson tailory",
     "courseTeacher": "Henrique Jean-Mowgle",
     "imageurl": "",
     "type": "Student"

@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text} from 'react-native';
+import {View, Text} from 'react-native';
 import {Tabs, TabScreen} from 'react-native-paper-tabs';
 import Spacer from '../../utils/Spacer';
- 
+
 // ------------------IMPORTING COMPONENTS--------------------
 import LessonTitle from '../LessonTitle';
 import DiscussionTitle from '../DiscussionTitle';
@@ -16,7 +16,7 @@ export default function TopTabNavLessons() {
       <TabScreen label="Info">
         <InfoTab />
       </TabScreen>
-      <TabScreen label="Lessons">
+      <TabScreen label="Lesson">
         <LessonTab />
       </TabScreen>
       <TabScreen label="Discuss">
@@ -28,7 +28,6 @@ export default function TopTabNavLessons() {
     </Tabs>
   );
 }
-
 
 // ------------------COURSE INFO TAB.--------------------
 const InfoTab = () => {
@@ -53,7 +52,6 @@ const InfoTab = () => {
     </View>
   );
 };
-
 
 // ---------------------LESSONS TAB.-----------------------
 const LessonTab = () => {
@@ -89,7 +87,6 @@ const LessonTab = () => {
   );
 };
 
-
 // ------------------DISCUSSION TAB.--------------------
 const DiscussTab = () => {
   return (
@@ -107,7 +104,6 @@ const DiscussTab = () => {
     </View>
   );
 };
-
 
 // ------------------LIVE LESSONS TAB--------------------
 const LiveTab = () => {
@@ -145,4 +141,3 @@ const LiveTab = () => {
     </View>
   );
 };
-
