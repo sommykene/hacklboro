@@ -10,6 +10,26 @@ import {
   ScrollView,
 } from 'react-native';
 
+const styles=StyleSheet.create({
+  inputStyle: {
+    flex: 1,
+        color: 'white',
+        paddingRight: 10,
+        paddingLeft: 10,
+        borderWidth: 2,
+        borderRadius: 5,
+        borderColor: 'grey',
+        paddingBottom: 10,
+  },
+  RegisterStyle: {
+    borderRadius: 8,
+    backgroundColor: 'grey',
+    padding: 20,
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+});
+
 const Signup = ({navigation}) => {
   const [userName, setUserName] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -37,6 +57,7 @@ const Signup = ({navigation}) => {
         <KeyboardAvoidingView enabled>
           <View>
             <TextInput
+              style={styles.inputStyle}
               onChangeText={(user) => setUserName(user)}
               placeholder="Enter username (the name you login with"
               returnKeyType="next"
@@ -48,6 +69,7 @@ const Signup = ({navigation}) => {
           </View>
           <View>
             <TextInput
+              style={styles.inputStyle}
               onChangeText={(name) => setPrefName(name)}
               placeholder="Enter screen name (the name you will seen as)"
               returnKeyType="next"
@@ -57,6 +79,7 @@ const Signup = ({navigation}) => {
           </View>
           <View>
             <TextInput
+              style={styles.inputStyle}
               onChangeText={(pass) => setUserPassword(pass)}
               placeholder="Enter Password"
               returnKeyType="next"
@@ -67,8 +90,8 @@ const Signup = ({navigation}) => {
             />
           </View>
           <TouchableOpacity
-          onPress={() => navigation.navigate ('ViewChooser')}>
-            <Text>REGISTER</Text>
+          onPress={() => navigation.navigate ('Login')}>
+            <Text style={styles.RegisterStyle}>REGISTER</Text>
           </TouchableOpacity>
         </KeyboardAvoidingView>
       </ScrollView>
