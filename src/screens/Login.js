@@ -46,15 +46,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export const LoggedIn = {
-  yes: true,
-  no: false,
-};
-
 const LoginScreen = ({navigation}) => {
+  // getters an setters for the username and password
   const [userName, setUserName] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  const [error, setError] = useState('');
 
   const passwordInputRef = createRef();
 
@@ -89,6 +84,7 @@ const LoginScreen = ({navigation}) => {
                 blurOnSubmit={false}
               />
               <Spacer />
+              {/*input password details*/}
               <TextInput
                 style={styles.inputStyle}
                 onChangeText={(pass) => setUserPassword(pass)}
