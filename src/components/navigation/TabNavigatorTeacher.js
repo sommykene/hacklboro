@@ -45,7 +45,7 @@ function TechScreen() {
 
 const Tab = createMaterialBottomTabNavigator();
 //comment
-export default function TabNavigation() {
+export default function TabNavigationTeacher() {
   return (
     <NavigationContainer shifting={false}>
       <Tab.Navigator

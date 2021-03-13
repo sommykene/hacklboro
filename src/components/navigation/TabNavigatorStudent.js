@@ -35,7 +35,7 @@ function BrowseScreen() {
 //comment
 const Tab = createMaterialBottomTabNavigator();
 
-export default function TabNavigation() {
+export default function TabNavigationStudent() {
   return (
     <NavigationContainer shifting={false}>
       <Tab.Navigator
