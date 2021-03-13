@@ -13,7 +13,6 @@ import TagInput from 'react-native-tags-input';
 
 // ------------------ PROFILE SECTION --------------------
 function Profile(){
-
     return( 
         <View >
             <Text style={{fontSize:30, fontWeight:'bold', marginLeft: 15}}>
@@ -86,7 +85,7 @@ class MyInterests extends React.Component {
 function Badges(){
     return (
         <View>
-            <Text style={{fontSize:28, fontWeight:'bold', marginLeft:15}}>Badges earned</Text>
+            <Text style={{fontSize:28, fontWeight:'bold', marginLeft:15, marginTop:170}}>Badges earned</Text>
             <View style={styles.badgeContainer}>
                 <Image source = {badge} style = {styles.badge}/>
                 <Image source = {badge2} style = {styles.badge}/>
@@ -106,7 +105,7 @@ function Badges(){
 
 const styles = StyleSheet.create({
     interestContainer: {
-      margin: 15,
+      margin: 30,
       flex: 1,
     },
     textInput: {
@@ -146,7 +145,7 @@ const styles = StyleSheet.create({
 		margin:15,
 		flexDirection: 'row',
 		justifyContent: 'flex-start', 
-		alignSelf: 'flex-start',		
+		
 	},
 
 	badge:{
