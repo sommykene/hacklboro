@@ -44,7 +44,7 @@ function TechScreen() {
   }
 
 const Tab = createMaterialBottomTabNavigator();
-//comment
+
 export default function TabNavigationTeacher() {
   return (
     <NavigationContainer >
