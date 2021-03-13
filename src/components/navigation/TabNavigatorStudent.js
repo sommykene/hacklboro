@@ -32,7 +32,7 @@ function BrowseScreen() {
       </View>
     );
   }
-
+//comment
 const Tab = createMaterialBottomTabNavigator();
 
 export default function TabNavigation() {
