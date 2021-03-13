@@ -1,12 +1,17 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text, Dimensions} from 'react-native';
+
+//--------------------BADGE IMAGE IMPORTS-----------------
 import badge from '../../images/png/chevron-1.png'
+import badge2 from '../../images/png/chevron-10.png'
+import badge3 from '../../images/png/chevron-11.png'
+import badge4 from '../../images/png/chevron-12.png'
+
 
 import TagInput from 'react-native-tags-input';
 
-const mainColor = '#fff';
 
-
+// ------------------ PROFILE SECTION --------------------
 function Profile(){
 
     return( 
@@ -26,29 +31,36 @@ function Profile(){
         );
 }
 
+// ------------------ INTEREST TAG FUNCTIONALITY! --------------------
 class MyInterests extends React.Component {
+    // Tag states.
     constructor(props) {
       super(props);
       this.state = {
         tags: {
           tag: '',
-          tagsArray: ['Maths', 'English language', 'Physics']
+          tagsArray: ['Maths', 'English language', 'Physics']//Holds all tags.
         },
         tagsColor: '#c4c4c4',
         tagsText: '#fff',
       };
     }
-  
+    
+    // function to update the tags as they're added.
     updateTagState = (state) => {
         this.setState({
           tags: state
         })
       };
-  
+    
+    
     render() {
       return (
         <View style={styles.interestContainer}>
           <Text style = {{fontWeight: 'bold', fontSize: 25, alignSelf:'flex-start'}}>My Interests/Topics</Text>
+          {/* The tag component. allows user to input tags and will update tags. prop info can be found at:
+                  https://morioh.com/p/f47c27d5e8ba
+            */}
           <TagInput
             updateState={this.updateTagState}
             tags={this.state.tags}
@@ -59,7 +71,7 @@ class MyInterests extends React.Component {
             inputContainerStyle={[styles.textInput, {backgroundColor: this.state.tagsColor}]}
             inputStyle={{color: this.state.tagsText}}
             onFocus={() => this.setState({tagsColor: '#fff', tagsText: 'black'})}
-            onBlur={() => this.setState({tagsColor: mainColor, tagsText: '#c4c4c4'})}
+            onBlur={() => this.setState({tagsColor: '#fff', tagsText: '#c4c4c4'})}
             autoCorrect={false}
             tagStyle={styles.tag}
             tagTextStyle={styles.tagText}
@@ -70,16 +82,17 @@ class MyInterests extends React.Component {
   }
 
 
+// ------------------ BADGES -------------------------
 function Badges(){
     return (
         <View>
             <Text style={{fontSize:28, fontWeight:'bold', marginLeft:15}}>Badges earned</Text>
             <View style={styles.badgeContainer}>
                 <Image source = {badge} style = {styles.badge}/>
-                <Image source = {badge} style = {styles.badge}/>
-                <Image source = {badge} style = {styles.badge}/>
-                <Image source = {badge} style = {styles.badge}/>
-                <Image source = {badge} style = {styles.badge}/>
+                <Image source = {badge2} style = {styles.badge}/>
+                <Image source = {badge3} style = {styles.badge}/>
+                <Image source = {badge4} style = {styles.badge}/>
+                <Image source = {badge2} style = {styles.badge}/>
             </View>
         </View>
         
@@ -89,7 +102,7 @@ function Badges(){
 
 
 
-
+//-----------STYLESHEETS FOR COMPONENTS------------------
 
 const styles = StyleSheet.create({
     interestContainer: {
