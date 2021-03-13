@@ -15,18 +15,17 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import TabNavigation from './src/components/navigation/TabNavigatorTeacher';
+import LoginNav from './src/components/navigation/LoginNavigation';
+import LoginScreen from './src/screens/Login';
 
 function App() {
   return (
+
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Text>Hack Lboro</Text>
-          <TabNavigation/>
-        </ScrollView>
-      </SafeAreaView>
+
+        <LoginNav />
+
     </>
   );
 }
