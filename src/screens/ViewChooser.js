@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, View, Text, Button, Alert } from 'react-native'
-import { color } from 'react-native-reanimated'
 
 const ViewChooser = () => {
     return(
@@ -15,7 +14,7 @@ const ViewChooser = () => {
             </View>
 
             <View style={styles.container}>
-            <Button 
+            <Button
                 title="Student"
                 color='#C4C4C4'
                 onPress={() => Alert.alert('Student Button pressed')}
@@ -23,22 +22,22 @@ const ViewChooser = () => {
             </View>
 
             <View style={styles.container}>
-            <Button 
+            <Button
                title="Teacher"
                color='#C4C4C4'
                onPress={() => Alert.alert('Teacher Button pressed')}
              />
             </View>
-           
+
         </View>
     )
 }
 
 
 const styles = StyleSheet.create({
-    
-    container: { 
-    borderRadius:20, 
+
+    container: {
+    borderRadius:20,
     padding:20,
     width:'70%',
     height: '40%',
@@ -48,4 +47,4 @@ const styles = StyleSheet.create({
  },
 })
 
-export default ViewChooser 
+export default ViewChooser;
