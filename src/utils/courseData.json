@@ -1,9 +1,72 @@
 {
   "one": {
-    "courseTitle": "",
-    "courseDescription": "",
-    "courseTeacher": "",
+    "courseTitle": "Mathematics II",
+    "courseDescription": "Intermediate maths class for avid learners",
+    "courseTeacher": "Jessica Parson",
     "imageurl": "",
-    "type": ""
+    "type": "Student"
+  },
+  "two": {
+    "courseTitle": "Money Management 101",
+    "courseDescription": "Learn how to budget and spend your money wisely",
+    "courseTeacher": "J.J. Whitely",
+    "imageurl": "",
+    "type": "General"
+  },
+  "three": {
+    "courseTitle": "Teach English for French Speaking Countries",
+    "courseDescription": "For English teachers to learn the fundamentals of the French language in order to teach in French countries",
+    "courseTeacher": "Martin Luther",
+    "imageurl": "",
+    "type": "Teacher"
+  },
+  "four": {
+    "courseTitle": "Building Essentials",
+    "courseDescription": "Earn vocational skills and enhance you talent range",
+    "courseTeacher": "P. Morrison",
+    "imageurl": "",
+    "type": "General"
+  },
+  "five": {
+    "courseTitle": "English for Non English Speakers",
+    "courseDescription": "Learn English using lesson tailored for those who do not speak it natively",
+    "courseTeacher": "Henrique Jean-Mowgle",
+    "imageurl": "",
+    "type": "Student"
+  },
+  "six": {
+    "courseTitle": "Advanced Physics for Older Students",
+    "courseDescription": "Course for teaching more advanced students",
+    "courseTeacher": "Andrew Garfield",
+    "imageurl": "",
+    "type": "Teacher"
+  },
+  "seven": {
+    "courseTitle": "Personal Safety",
+    "courseDescription": "Learn self defensive skills and learn how to identify dangerous situations",
+    "courseTeacher": "Melissa Barnes",
+    "imageurl": "",
+    "type": "General"
+  },
+  "eight": {
+    "courseTitle": "Safeguarding and First Aid",
+    "courseDescription": "Essential safeguarding knowledge and basic first aid",
+    "courseTeacher": "D. Sailsbury",
+    "imageurl": "",
+    "type": "Teacher"
+  },
+  "nine": {
+    "courseTitle": "Computer Engineering for Beginners",
+    "courseDescription": "Understand the fundamentals of computer systems and systems engineering",
+    "courseTeacher": "Russell Brooks",
+    "imageurl": "",
+    "type": "Student"
+  },
+  "ten": {
+    "courseTitle": "Cooking SOS",
+    "courseDescription": "Become the best chef in your area using this quick guide to cooking fast, simple and tasty meals",
+    "courseTeacher": "Jamie Oliver",
+    "imageurl": "",
+    "type": "General"
   }
 }
