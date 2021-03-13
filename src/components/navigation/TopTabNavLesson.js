@@ -1,21 +1,9 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-import {Button, Title, Paragraph} from 'react-native-paper';
-import {
-  Tabs,
-  TabScreen,
-  useTabIndex,
-  useTabNavigation,
-} from 'react-native-paper-tabs';
+import { View, Text} from 'react-native';
+import {Tabs, TabScreen} from 'react-native-paper-tabs';
 import Spacer from '../../utils/Spacer';
-
+ 
+// ------------------IMPORTING COMPONENTS--------------------
 import LessonTitle from '../LessonTitle';
 import DiscussionTitle from '../DiscussionTitle';
 
@@ -23,6 +11,7 @@ const theme = {colors: {primary: '#1792EB'}};
 
 export default function TopTabNavLessons() {
   return (
+    //This section sets the labels for each tab in our tabbed sections.
     <Tabs theme={theme} uppercase={false} style={{backgroundColor: '#fff'}}>
       <TabScreen label="Info">
         <InfoTab />
@@ -40,6 +29,8 @@ export default function TopTabNavLessons() {
   );
 }
 
+
+// ------------------COURSE INFO TAB.--------------------
 const InfoTab = () => {
   return (
     <View style={{padding: 20, flex: 1}}>
@@ -62,6 +53,9 @@ const InfoTab = () => {
     </View>
   );
 };
+
+
+// ---------------------LESSONS TAB.-----------------------
 const LessonTab = () => {
   return (
     <View style={{flex: 1, padding: 20}}>
@@ -94,6 +88,9 @@ const LessonTab = () => {
     </View>
   );
 };
+
+
+// ------------------DISCUSSION TAB.--------------------
 const DiscussTab = () => {
   return (
     <View style={{flex: 1, padding: 20}}>
@@ -110,6 +107,9 @@ const DiscussTab = () => {
     </View>
   );
 };
+
+
+// ------------------LIVE LESSONS TAB--------------------
 const LiveTab = () => {
   return (
     <View style={{flex: 1, padding: 20}}>
@@ -146,14 +146,3 @@ const LiveTab = () => {
   );
 };
 
-function ExploreWitHookExamples() {
-  const goTo = useTabNavigation();
-  const index = useTabIndex();
-  return (
-    <View style={{flex: 1}}>
-      <Title>Explore</Title>
-      <Paragraph>Index: {index}</Paragraph>
-      <Button onPress={() => goTo(1)}>Go to Flights</Button>
-    </View>
-  );
-}
