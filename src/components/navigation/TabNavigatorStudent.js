@@ -5,7 +5,9 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 function MyCoursesScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' }}>
       <Text>My Courses!</Text>
     </View>
   );
@@ -13,7 +15,9 @@ function MyCoursesScreen() {
 
 function BrowseScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' }}>
       <Text>Training!</Text>
     </View>
   );
@@ -21,7 +25,9 @@ function BrowseScreen() {
 
   function ProfileScreen() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, 
+      justifyContent: 'center', 
+      alignItems: 'center' }}>
         <Text>Profile!</Text>
       </View>
     );
